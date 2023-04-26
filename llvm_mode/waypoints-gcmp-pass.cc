@@ -25,12 +25,16 @@ class GCmpFeedback : public fuzzfactory::DomainFeedback<GCmpFeedback> {
         switch (sign) {
             case GT:
                 sign_str = "gt";
+                break;
             case GE:
                 sign_str = "ge";
+                break;
             case LT:
                 sign_str = "lt";
+                break;
             case LE:
                 sign_str = "le";
+                break;
         };
         std::string fname = (prefix + sign_str + Twine(bw)).str();
         return resolveFunction(fname, getIntTy(1), {getIntTy(bw), getIntTy(bw)});
