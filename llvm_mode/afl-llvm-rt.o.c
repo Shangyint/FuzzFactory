@@ -359,10 +359,8 @@ void __fuzzfactory_dsf_max(dsf_t id, u32 key, u32 value) {
 }
 
 void __fuzzfactory_dsf_min(dsf_t id, u32 key, u32 value) {
-  printf("minimizing id: %d, key: %u, value: %u, key_idx: %d\n", id, key, value, key_idx(id, key));
   int idx = key_idx(id, key);
   int old = __fuzzfactory_dsf_map[idx];
-  printf("old: %d\n", old);
   __fuzzfactory_dsf_map[idx] = old < value ? old : value; 
 }
 
