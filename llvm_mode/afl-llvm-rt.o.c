@@ -358,6 +358,12 @@ void __fuzzfactory_dsf_max(dsf_t id, u32 key, u32 value) {
   __fuzzfactory_dsf_map[idx] = old > value ? old : value; 
 }
 
+void __fuzzfactory_dsf_min(dsf_t id, u32 key, u32 value) {
+  int idx = key_idx(id, key);
+  int old = __fuzzfactory_dsf_map[idx];
+  __fuzzfactory_dsf_map[idx] = old < value ? old : value; 
+}
+
 void __fuzzfactory_dsf_set(dsf_t id, u32 key, u32 value) {
   int idx = key_idx(id, key);
   __fuzzfactory_dsf_map[idx] = value;

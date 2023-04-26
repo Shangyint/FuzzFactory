@@ -163,7 +163,7 @@ publish: clean
 	echo -n "$(VERSION)" >~/www/afl/version.txt
 
 # FuzzFactory LLVM-based domains
-DOMAINS ?= slow perf mem cmp valid diff
+DOMAINS ?= slow perf mem cmp valid diff gcmp
 .PHONY: fuzzfactory-domains
 .PHONY: $(DOMAINS)
 

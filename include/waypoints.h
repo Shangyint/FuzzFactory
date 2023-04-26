@@ -46,6 +46,7 @@ typedef int dsf_t;
 
 /* Functions that update DSF map at run-time */
 void __fuzzfactory_dsf_max(dsf_t id, u32 key, u32 value);
+void __fuzzfactory_dsf_min(dsf_t id, u32 key, u32 value);
 void __fuzzfactory_dsf_bitwise_or(dsf_t id, u32 key, u32 value);
 void __fuzzfactory_dsf_set(dsf_t id, u32 key, u32 value);
 void __fuzzfactory_dsf_increment(dsf_t id, u32 key, u32 value);
@@ -58,6 +59,7 @@ void __fuzzfactory_dsfp_increment(dsf_t* p, u32 key, u32 value);
 
 /* Macros for use in manual insertion of DSF calls */
 #define FUZZFACTORY_DSF_MAX(id, k, v) (__fuzzfactory_dsf_max(id, k, v))
+#define FUZZFACTORY_DSF_MIN(id, k, v) (__fuzzfactory_dsf_min(id, k, v))
 #define FUZZFACTORY_DSF_BIT(id, k, v) (__fuzzfactory_dsf_bitwise_or(id, k, v))
 #define FUZZFACTORY_DSF_SET(id, k, v) (__fuzzfactory_dsf_set(id, k, v))
 #define FUZZFACTORY_DSF_INC(id, k, v) (__fuzzfactory_dsf_increment(id, k, v))
@@ -95,6 +97,7 @@ dsf_t __fuzzfactory_new_domain(u32 size, enum fuzzfactory_reducer reducer, u32 i
 #define AFL_WAYPOINT(key, val, agg)
 #define AFL_WAYPOINTS_SET_STATE(state)
 #define FUZZFACTORY_DSF_MAX(id, k, v)
+#define FUZZFACTORY_DSF_MIN(id, k, v)
 #define FUZZFACTORY_DSF_BIT(id, k, v)
 #define FUZZFACTORY_DSF_SET(id, k, v)
 #define FUZZFACTORY_DSF_INC(id, k, v)
