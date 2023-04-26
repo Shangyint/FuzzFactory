@@ -16,7 +16,7 @@
 #endif
 
 // Allocate the the DSF map
-FUZZFACTORY_DSF_NEW(__wrapgcmp_dsf_map, MAP_SIZE, FUZZFACTORY_REDUCER_MIN, UINT32_MAX);
+FUZZFACTORY_DSF_NEW(__wrapgcmp_dsf_map, MAP_SIZE, FUZZFACTORY_REDUCER_MIN, INT32_MAX);
 
 // Global variable used to store program location hash
 u32 __wrapgcmp_program_loc = 0;

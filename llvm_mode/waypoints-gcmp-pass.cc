@@ -44,8 +44,8 @@ class GCmpFeedback : public fuzzfactory::DomainFeedback<GCmpFeedback> {
 
 public:
     GCmpFeedback(Module& M) : fuzzfactory::DomainFeedback<GCmpFeedback>(M, "__afl_gcmp_dsf") { 
-        // Create a reference to the global variable "__wrapcmp_program_loc"
-        ProgramLocationHash = new GlobalVariable(M, Int32Ty, false, GlobalValue::ExternalLinkage, 0, "__wrapcmp_program_loc");
+        // Create a reference to the global variable "__wrapgcmp_program_loc"
+        ProgramLocationHash = new GlobalVariable(M, Int32Ty, false, GlobalValue::ExternalLinkage, 0, "__wrapgcmp_program_loc");
     }
 
     /* Handle icmp instruction */
