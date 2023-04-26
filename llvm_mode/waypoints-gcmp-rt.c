@@ -32,7 +32,7 @@ u32 __wrapgcmp_program_loc = 0;
 
 /* Minimize a value `v` at a key given by the current program location hash and current state */
 #define WP_KEY()  __wrapgcmp_program_loc
-#define WP(v) FUZZFACTORY_DSF_MIN(__wrapcmp_dsf_map, WP_KEY(), v)
+#define WP(v) FUZZFACTORY_DSF_MIN(__wrapgcmp_dsf_map, WP_KEY(), v)
 
 /* Increment the location hash; useful when generating new locations adjacent to the randomly generated one */
 #define INC_LOC() __wrapgcmp_program_loc++
